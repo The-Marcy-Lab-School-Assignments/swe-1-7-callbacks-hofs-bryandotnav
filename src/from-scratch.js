@@ -1,28 +1,21 @@
 // Create callback functions for Higher-Order Functions:
 const logEachValue = (arr) => {
-  if(arr.length <= 0){
-    return arr;
-  }
-  for(let i=0;i<arr.length;i++){
-    console.log(`Value: ${arr[i]}, index: ${i}.`)
-  }
+  arr.forEach((element, index) => {
+    console.log(`Value: ${element}, index: ${index}.`);
+  });
+  
 };
 
 const makePeopleHappy = (people) => {
- for(let i=0;i<people.length;i++){
-  let currentMood = people[i];
-  currentMood.isHappy = !currentMood.isHappy
- }
- console.log(people)
+  people.forEach((person) => {
+    return person.isHappy = true;
+  });
 };
 
 const getEvenNumbers = (numbers) => { 
-  const arr1 = [];
-  for(let i=0;i<numbers.length;i++){
-    if(numbers[i]%2===0){
-      arr1.push(numbers[i])}
-  };
-  return arr1;
+  return numbers.filter((number) => {
+     return number % 2 === 0;
+  });
 };
 
 
