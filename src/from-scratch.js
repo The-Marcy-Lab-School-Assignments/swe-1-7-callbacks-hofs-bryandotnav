@@ -48,11 +48,31 @@ const myForEach = (arr, callback) => {
   }
 };
 
-const myMap = (arr, tranform) => { };
+const myMap = (arr, callback) => { 
+  const emptyArr = [];
+  for(let i=0;i<arr.length;i++){
+    emptyArr.push(callback(arr[i], i, arr))
+  }
+  return emptyArr
+};
 
-const myFilter = () => { };
+const myFilter = (arr, callback) => { 
+  const emptyArr = [];
+  for(let i=0; i<arr.length; i++){
+    if(callback(arr[i])){
+      emptyArr.push(arr[i])
+    } else continue;
+  }
+  return emptyArr;
+};
 
-const myFind = () => { };
+const myFind = (arr, callback) => { 
+  for(let i=0;i<arr.length;i++){
+    if(callback(arr[i])){
+      return arr[i]
+    }
+  }
+};
 
 // Use Array.sort() and provide the correct callback sorting function:
 module.exports = {
